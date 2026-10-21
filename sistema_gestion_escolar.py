@@ -1,6 +1,9 @@
 # Algoritmo SistemaGestionEscolar
 
+nota_minima_aprobacion = 11
 suma_promedios = 0
+aprobados = 0
+reprobados = 0
 
 print("SISTEMA DE GESTION ESCOLAR")
 
@@ -51,3 +54,21 @@ for i in range(1, cantidad + 1):
     print("Nombre: ", nombre)
     print("Curso: ", curso)
     print("Promedio: ", round(promedio, 2))
+
+    if promedio >= nota_minima_aprobacion:
+        print("Estado: APROBADO")
+        aprobados = aprobados + 1
+    else:
+        print("Estado: REPROBADO")
+        reprobados = reprobados + 1
+
+    print("Asistencias en la semana: ", asistencias, " de 5")
+    if asistencias < 3:
+        print("*** Asistencia baja ***")
+
+promedio_general = suma_promedios / cantidad
+print("RESUMEN GENERAL")
+print("Total de estudiantes: ", cantidad)
+print("Aprobados: ", aprobados)
+print("Reprobados: ", reprobados)
+print("Promedio general del curso: ", round(promedio_general, 2))
